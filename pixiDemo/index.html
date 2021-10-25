@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/pixi.min.js"></script>
+    <script>
+		var app = new PIXI.Application(500,350);
+        document.body.appendChild(app.view);
+        var bg = new PIXI.Sprite.fromImage("res/bg.png");
+        app.stage.addChild(bg);
+		bg.scale.x = 0.9;
+		bg.scale.y = 0.6;
+		var picture1=new PIXI.Sprite.fromImage("res/picture1.png");
+		picture1.x=150;
+		app.stage.addChild(picture1);
+		picture1.scale.x=0.25;
+		picture1.scale.y=0.25;
+		picture1.visible=false;
+		var picture2=new PIXI.Sprite.fromImage("res/picture2.png");
+		picture2.x=150;
+		app.stage.addChild(picture2);
+		picture2.scale.x=0.4;
+		picture2.scale.y=0.4;
+		picture2.visible=false;
+		var picture3=new PIXI.Sprite.fromImage("res/picture3.png");
+		picture3.x=150;
+		app.stage.addChild(picture3);
+		picture3.scale.x=0.4;
+		picture3.scale.y=0.4;
+		picture3.visible=false;
+		
+		var button_01=new PIXI.Sprite.fromImage("res/button.png");
+		app.stage.addChild(button_01);
+        button_01.scale.x=0.5;
+		button_01.scale.y=0.5;
+		var button_02=new PIXI.Sprite.fromImage("res/button.png");
+		button_02.y=106;
+		app.stage.addChild(button_02);
+		button_02.scale.x=0.5;
+		button_02.scale.y=0.5;
+		var button_03=new PIXI.Sprite.fromImage("res/button.png");
+		button_03.y=220;
+		app.stage.addChild(button_03);
+		button_03.scale.x=0.5;
+		button_03.scale.y=0.5;
+		button_01.interactive=true;
+		button_01.on("mouseover",light01);
+		function light01(){
+			button_01.alpha=0.1;
+			picture1.visible=true;
+			picture2.visible=false;
+			picture3.visible=false;
+			}
+		button_01.interactive=true;
+		button_01.on("mouseout",dark01);
+		function dark01(){
+			button_01.alpha=1;
+			picture1.visible=false;
+			picture2.visible=false;
+			picture3.visible=false;
+			}
+		button_02.interactive=true;
+		button_02.on("mouseover",light02);
+		function light02(){
+			button_02.alpha=0.1;
+			picture1.visible=false;
+			picture2.visible=true;
+			picture3.visible=false;
+			}
+		button_02.interactive=true;
+		button_02.on("mouseout",dark02);
+		function dark02(){
+			button_02.alpha=1;
+			picture1.visible=false;
+			picture2.visible=false;
+			picture3.visible=false;
+			}
+		button_03.interactive=true;
+		button_03.on("mouseover",light03);
+		function light03(){
+				button_03.alpha=0.1;
+				picture1.visible=false;
+				picture2.visible=false;
+				picture3.visible=true;
+				}
+			button_03.interactive=true;
+			button_03.on("mouseout",dark03);
+			function dark03(){
+				button_03.alpha=1;
+				picture1.visible=false;
+				picture2.visible=false;
+				picture3.visible=false;
+				}
+			
+		
+		
+		
+
+    </script>
+</body>
+</html>
